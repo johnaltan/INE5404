@@ -1,0 +1,17 @@
+public class Carro{
+    private double preco;
+    private int ano;
+    private String marca, modelo;
+
+    public Carro(double preco, int ano, String marca, String modelo){
+        this.preco = preco;
+        this.ano = ano;
+        this.marca = marca;
+        this.modelo = modelo;
+    }
+
+    void listar(){
+        
+    }
+
+}

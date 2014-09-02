@@ -1,0 +1,12 @@
+public class Loja{
+    Carro[] estoque;
+
+    public Loja(Carro[] estoque){
+        this.estoque = estoque;
+    }
+
+    public void listarEstoque(){
+        
+    }
+
+}
