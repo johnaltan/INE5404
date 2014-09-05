@@ -1,0 +1,7 @@
+class Tratador implements ActionListener{
+  Container c;
+
+  public void actionPerformed(ActionEvent e){
+    
+  }
+}
