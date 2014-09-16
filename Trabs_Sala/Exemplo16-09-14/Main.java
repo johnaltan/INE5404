@@ -18,7 +18,7 @@ class Main{
   static void teste1(Reprodutor quadro){
     Reproduzivel fig;
     fig = new FigRetangulo();
-    quadro.setFig(fig);
+    quadro.addFig(fig);
     quadro.repaint();
   }
 }
