@@ -1,0 +1,30 @@
+class Triangulo implements Deslocavel{
+  private Ponto a,b,c;//pontos vertice
+  Triangulo(Ponto a, Ponto b, Ponto c) {
+    this.a = a;
+    this.b = b;
+    this.c = c;
+  }
+  public void deslocarX(int val) {
+    a.deslocarX(val);
+    b.deslocarX(val);
+    c.deslocarX(val);
+  }
+  public void deslocarY(int val){
+    a.deslocarY(val);
+    b.deslocarY(val);
+    c.deslocarY(val);
+  }
+
+  public int[] verticesX(){
+    return new int[]{a.x(),b.x(),c.x()};    
+  }
+
+  public int[] verticesY(){
+    return new int[]{a.y(),b.y(),c.y()};    
+  }
+ 
+  public String toString() {
+    return "Triangulo(" + a + "," + b + "," + c + ")";
+  }
+}

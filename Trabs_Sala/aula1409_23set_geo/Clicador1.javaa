@@ -1,0 +1,18 @@
+
+class Clicador {
+
+  Clicador(Reprodutor quadro) {
+    this.quadro = quadro;
+  }
+  private Reprodutor quadro;
+  void clique(int x, int y) {
+    System.out.println("("+ x +","+ y +")");
+    quadro.addFig(new FigRetangulo(
+      new Ponto(x,y),
+      new Ponto(x+30,y+30)
+    ));
+    quadro.repaint();
+  }
+
+
+}

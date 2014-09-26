@@ -1,0 +1,14 @@
+import java.awt.*;
+
+class FigRetangulo  implements Reproduzivel {
+  private int x = 100, y = 200;
+  FigRetangulo() {}
+  FigRetangulo(int x, int y) {
+    this.x = x;
+    this.y = y;
+  }
+  public void reproduzir(Graphics g) {
+    g.drawRect(this.x,this.y,40,50);
+  }
+  
+}
