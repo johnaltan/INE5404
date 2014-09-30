@@ -23,7 +23,7 @@ class Reprodutor extends JPanel implements MouseListener {
   public void mouseExited(MouseEvent e) {}
 
   void addFig(Reproduzivel fig) {
-    this.fig.add(fig);
+    this.fig[prox++] = fig;
   }
 
   public void paintComponent(Graphics g) {
