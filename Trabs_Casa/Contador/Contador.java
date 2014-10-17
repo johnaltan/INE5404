@@ -1,31 +1,47 @@
-class Contador{
+import javax.swing.*;
+
+class Contador implements Sujeito{
     private int soma;
+    private Observador observador;
+    JLabel tela;
     
-    public Contador(){
+    public Contador(JLabel tela){
         this.soma = 0;
+        this.tela = tela;
     }
     
-    public Contador(int soma){
+    public Contador(int soma,JLabel tela){
         this.soma = soma;
+        this.tela = tela;
+    }
+    
+    public void cadastrarObservador(Observador observador){
+        this.observador = observador;
     }
     
     public void inc(){
         this.soma++;
+        observador.atualizar(this);
     }
     
     public void dec(){
         this.soma--;
+        observador.atualizar(this);
     }
     
     public void zero(){
         this.soma = 0;
+        observador.atualizar(this);
     }
     
-    public String amostrar(){
-        return Integer.toString(this.soma);
+    public void modificar(){
+        tela.setText(""+soma);
     }
     
     public Contador copia(){
-        return new Contador(this.soma);
+        Contador c = new Contador(this.soma,this.tela);
+        c.cadastrarObservador(this.observador);
+        observador.atualizar(c);
+        return c;
     }
 }

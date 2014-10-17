@@ -3,12 +3,13 @@ import java.awt.*;
 import java.awt.event.*;
 
 class TratadorBotao implements ActionListener{
-    JLabel tela;
+    //JLabel tela;
     Contador c, mem;
     
     public TratadorBotao(JLabel tela){
-        this.tela = tela;
-        c = new Contador();
+        c = new Contador(tela);
+        Mostrador mostrador = new Mostrador();
+        c.cadastrarObservador(mostrador);
     }
     
     public void actionPerformed(ActionEvent evt){
@@ -33,6 +34,5 @@ class TratadorBotao implements ActionListener{
         else if(cmd.equals("MC")){
             mem = null;
         }
-        tela.setText(c.amostrar());
     }
 }
