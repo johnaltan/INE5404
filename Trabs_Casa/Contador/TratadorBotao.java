@@ -8,7 +8,7 @@ class TratadorBotao implements ActionListener{
     
     public TratadorBotao(JLabel tela){
         c = new Contador(tela);
-        Mostrador mostrador = new Mostrador();
+        Mostrador mostrador = new Mostrador(c);
         c.cadastrarObservador(mostrador);
     }
     

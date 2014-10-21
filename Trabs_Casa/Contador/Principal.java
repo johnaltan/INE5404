@@ -7,9 +7,12 @@ class Principal{
     public static void main(String[] args){
         JFrame f = new JFrame();
         JPanel quadro = new JPanel();
+        JMenuBar barra = new JMenuBar();
+        f.setJMenuBar(barra);
         f.setContentPane(quadro);
         
         teste1(quadro);
+        fazerGuias(barra);
         
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.pack();
@@ -66,5 +69,23 @@ class Principal{
         bMC.addActionListener(t);
         bMC.setActionCommand(bMC.getText());
         c3.add(bMC);
+    }
+    
+    static void fazerGuias(JMenuBar barra){
+        JMenu guia;
+        JMenuItem item;
+        
+        guia = new JMenu("Arquivo");
+        barra.add(guia);
+        
+        item = new JMenuItem("Sair");
+        guia.add(item);
+        item.addActionListener(new TratadorGuias());
+    }
+}
+
+class TratadorGuias implements ActionListener{
+    public void actionPerformed(ActionEvent evt){
+        System.out.println("guia");
     }
 }

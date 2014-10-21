@@ -21,17 +21,21 @@ class Contador implements Sujeito{
     
     public void inc(){
         this.soma++;
-        observador.atualizar(this);
+        this.notificar();
     }
     
     public void dec(){
         this.soma--;
-        observador.atualizar(this);
+        this.notificar();
     }
     
     public void zero(){
         this.soma = 0;
-        observador.atualizar(this);
+        this.notificar();
+    }
+    
+    public void notificar(){
+        observador.atualizar();
     }
     
     public void modificar(){
@@ -40,8 +44,8 @@ class Contador implements Sujeito{
     
     public Contador copia(){
         Contador c = new Contador(this.soma,this.tela);
-        c.cadastrarObservador(this.observador);
-        observador.atualizar(c);
+        c.cadastrarObservador(new Mostrador(c));
+        c.notificar();
         return c;
     }
 }

@@ -1,8 +1,13 @@
 import javax.swing.*;
 
 class Mostrador implements Observador{
+    private Contador contador;
     
-    public void atualizar(Sujeito sujeito){
-        sujeito.modificar();
+    public Mostrador(Contador contador){
+        this.contador = contador;
+    }
+    
+    public void atualizar(){
+        contador.modificar();
     }
 }

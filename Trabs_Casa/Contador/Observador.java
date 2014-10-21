@@ -1,3 +1,3 @@
 interface Observador{
-    public void atualizar(Sujeito sujeito);
+    public void atualizar();
 }
