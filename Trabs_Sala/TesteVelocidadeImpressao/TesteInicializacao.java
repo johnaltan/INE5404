@@ -1,12 +1,15 @@
+import java.util.Arrays;
+
 public class TesteInicializacao{
   public static void main(String[] args) throws Exception{
     int[] jjjj = {1,2,3,4,5};
-    imprimeArray(new int[]{1,32,231421345,3544352});
+    imprimeArray(jjjj);
   }
   
   private static void imprimeArray(int[] array) throws Exception{
-    System.out.println("Inicio algoritmo 1");    
-    long timestamp = System.nanoTime();
+    long timestamp;
+    System.out.println("Inicio algoritmo 1");
+    timestamp = System.nanoTime();
     
     String out = new String("[");
     for(int c : array) out = out + c + ",";
@@ -38,7 +41,15 @@ public class TesteInicializacao{
     System.out.print("]\n");
     timestamp = System.nanoTime() - timestamp;
     
-    System.out.println("Termino 3, tempo: " + String.valueOf(timestamp) + " ns"); 
+    System.out.println("Termino 3, tempo: " + String.valueOf(timestamp) + " ns");
+    
+    System.out.println("Inicio algoritmo 4");
+    timestamp = System.nanoTime();
+    
+    System.out.println(Arrays.toString(array));
+    
+    timestamp = System.nanoTime() - timestamp;
+    System.out.println("Termino 4, tempo: " + String.valueOf(timestamp) + " ns");
   }
 
 }
