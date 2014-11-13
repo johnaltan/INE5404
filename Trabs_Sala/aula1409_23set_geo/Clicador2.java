@@ -2,16 +2,18 @@ import java.util.List;
 import java.util.ArrayList;
 import java.awt.event.MouseEvent;
 
-class Clicador {
+class Clicador implements VisitanteClique{
   //badcode: dependencia ciclica (cf. aula)
-  Clicador(Reprodutor quadro) {
-    this.quadro = quadro;
+  Clicador() {
     pontos = new ArrayList<Ponto>();
   }
-  private Reprodutor quadro;
   private int q = 0;
   private int x1,y1,x2,y2;
   private List<Ponto> pontos;
+  
+  public void visite(Reprodutor reprodutor){
+    
+  }
   //via algoritmo
   //mais tarde, via padrao "estado"
   void clique(int x, int y) { //System.out.println("("+ x +","+ y +")");
